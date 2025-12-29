@@ -18,7 +18,7 @@ class Fib extends Component {
       const values = await axios.get('/api/values/current');
       this.setState({ values: values.data });
     } catch (err) {
-      console.log('Error fetching values:', err.message);
+      // Silently handle error when API is unavailable
     }
   }
 
@@ -29,7 +29,7 @@ class Fib extends Component {
         seenIndexes: seenIndexes.data,
       });
     } catch (err) {
-      console.log('Error fetching indexes:', err.message);
+      // Silently handle error when API is unavailable
     }
   }
 
